@@ -14,8 +14,12 @@ export const useAuthStore = defineStore('auth', ()=> {
             url: 'auth/reg',
             data: payload
         })
-        if(res.status ===200) {
-            console.log(res.data)
+        if(res.status ===201) {
+            ElMessage({
+                type: 'success',
+                message:'Muvfaqiyatli o`tdingingiz login parol bilan tishimga kiring'
+            })
+            router.push({name: 'login'})
         }
     }
     const login = async (payload) => {
@@ -24,7 +28,7 @@ export const useAuthStore = defineStore('auth', ()=> {
             data:payload
 
         })
-        if(res.status ===201) {
+        if(res.status ===200) {
             ElMessage({
                 Type: 'success',
                 message:'Ro`yxatdan o`tdingiz'

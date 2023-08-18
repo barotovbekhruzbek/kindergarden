@@ -1,5 +1,6 @@
 <template>
   <div class="reg">
+    <div class="title">Ro`yxatdan o`tish</div>
     <el-form
     ref="regForm"
     :model="user"
@@ -15,7 +16,7 @@
     <el-form-item label="Parolni kiriting" prop="password">
       <el-input v-model="user.password" show password />
     </el-form-item>
-      <el-button type="success" @click="regis(regForm)">Kirish</el-button>
+      <el-button type="success" @click="regis(regForm)">Ro`yxatdan o`tish</el-button>
     </el-form>
   </div>
 </template>
