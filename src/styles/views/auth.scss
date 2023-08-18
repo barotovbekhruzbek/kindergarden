@@ -1,0 +1,25 @@
+@import '../vars/color.scss';
+
+.auth {
+  width:100vw;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color:$green;
+  .reg {
+    background-color:#fff;
+    padding: 40px;
+    border-radius:10px;
+    .el-form {
+      width:350px;
+      max-width:100%;
+    }
+    .title {
+      text-align: center;
+      font-size:18px;
+      text-transform:uppercase;
+      margin-bottom:15px;
+    }
+  }
+}

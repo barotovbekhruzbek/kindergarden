@@ -31,7 +31,7 @@ export const useAuthStore = defineStore('auth', ()=> {
         if(res.status ===200) {
             ElMessage({
                 Type: 'success',
-                message:'Ro`yxatdan o`tdingiz'
+                message:'tizimga kirdingiz'
             })
         }
     }
