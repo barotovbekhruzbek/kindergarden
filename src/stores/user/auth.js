@@ -4,11 +4,17 @@ import cookies from 'vue-cookies'
 import router from '../../router'
 import { useApiStore } from '../helpers/api'
 import {ElMessage} from "element-plus";
+import {useTokenStore} from "@/stores/user/token";
 
 export const useAuthStore = defineStore('auth', ()=> {
     const user = ref({})
     const apiStore = useApiStore()
+    const tokenStore = useTokenStore()
+    const setUser = (payload) => {
+        cookies.set('bogcha-user', payload)
 
+        user.value = payload
+    }
     const registration = async(payload) => {
         let res = await apiStore.postAxios({
             url: 'auth/reg',
@@ -33,6 +39,9 @@ export const useAuthStore = defineStore('auth', ()=> {
                 Type: 'success',
                 message:'tizimga kirdingiz'
             })
+            setUser(res.data.user)
+            tokenStore.setToken(res.data.token)
+            router.push({name: 'dashboard'})
         }
     }
     return {

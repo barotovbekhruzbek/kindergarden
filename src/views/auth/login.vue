@@ -16,6 +16,7 @@
       <el-form-item label="Parolni kiriting" prop="password">
         <el-input v-model="user.password" show password />
       </el-form-item>
+      <router-link to="/reg">Akkauntingiz yo`qmi?</router-link>
       <el-button type="success" @click="toLogin(regForm)">Kirish</el-button>
     </el-form>
   </div>

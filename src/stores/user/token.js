@@ -7,7 +7,7 @@ export const useTokenStore = defineStore('token', ()=> {
 
     const setToken = (payload) => {
         cookie.set('bogcha-token',payload)
-        token.value = payload,
+        token.value = payload
         header.value = {
             headers:{
                 'Authorization': `Bearor ${token}`

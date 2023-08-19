@@ -16,6 +16,7 @@
     <el-form-item label="Parolni kiriting" prop="password">
       <el-input v-model="user.password" show password />
     </el-form-item>
+      <router-link to="/login">Kirish</router-link>
       <el-button type="success" @click="regis(regForm)">Ro`yxatdan o`tish</el-button>
     </el-form>
   </div>
@@ -38,7 +39,7 @@ const rules = ref({
   password: [
     {
       required: true,
-      message:'Parolni kiriting',
+      message:'Parolni kiriting?',
       trigger: 'blur'
     },
     {
