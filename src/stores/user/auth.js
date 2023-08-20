@@ -44,10 +44,22 @@ export const useAuthStore = defineStore('auth', ()=> {
             router.push({name: 'dashboard'})
         }
     }
+    const checkUser = async () => {
+        if(cookies.isKey('bogcha-token')) {
+            tokenStore.setToken(cookies.get('bogcha-token'))
+        }
+        let res = await apiStore.getAxios({
+            url: 'auth/checkuser'
+        })
+        if(res.status ===200) {
+
+        }
+    }
     return {
         registration,
         user,
-        login
+        login,
+        checkUser
     }
 })
 
