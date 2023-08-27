@@ -15,7 +15,7 @@ export const useApiStore = defineStore('api',()=>{
 
         const getAxios = (payload) => {
             return axios.get(`${url}/${payload.url}`,{
-             ...header
+             ...tokenStore.header
             }).catch(e => {
                 ElMessage({
                     type:'error',
