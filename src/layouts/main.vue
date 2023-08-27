@@ -1,12 +1,20 @@
 <template>
 <div class="main">
-    <router-view />
+  <Header />
+    <div class="wrapper">
+      <Aside />
+      <router-view />
+    </div>
 
 </div>
 </template>
 
 <script>
+import Header from "@/components/layouts/Header.vue";
+import Aside from "@/components/layouts/Aside.vue";
+
 export default {
+  components: {Aside, Header}
 
 }
 </script>
