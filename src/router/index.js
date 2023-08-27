@@ -45,6 +45,7 @@ router.beforeEach((to,from,next)=> {
    
     const authStore = useAuthStore()
     authStore.checkUser()
+    next()
   }
 })
 

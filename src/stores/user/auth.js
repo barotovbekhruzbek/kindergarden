@@ -52,7 +52,7 @@ export const useAuthStore = defineStore('auth', ()=> {
             url: 'auth/checkuser'
         })
         if(res.status ===200) {
-
+            setUser(res.data)
         }
     }
     return {
