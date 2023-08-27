@@ -7,7 +7,7 @@
         </el-icon>
         Bosh sahifa
       </router-link>
-      <router-link to="/" >
+      <router-link to="/product" >
         <el-icon>
           <HomeFilled />
         </el-icon>
@@ -42,8 +42,9 @@ export default {
         align-items: center;
         gap: 10px;
         padding: 10px;
-        &.router-active-link {
+        &.router-link-active {
           background-color: $green;
+          color: #fff;
         }
       }
     }
