@@ -15,6 +15,12 @@ export const useAuthStore = defineStore('auth', ()=> {
 
         user.value = payload
     }
+    const checkLogin = async (data) => {
+        return  await apiStore.postAxios({
+            url: `auth/checklogin`,
+            data
+        })
+    }
     const registration = async(payload) => {
         let res = await apiStore.postAxios({
             url: 'auth/reg',
@@ -59,7 +65,8 @@ export const useAuthStore = defineStore('auth', ()=> {
         registration,
         user,
         login,
-        checkUser
+        checkUser,
+        checkLogin
     }
 })
 

@@ -55,7 +55,7 @@ const rules = ref({
 })
 const authStore = useAuthStore()
 const loginCheck = async () => {
-   
+   let res = await authStore.checkLogin()
 }
 const regis = async (regForm) => {
 
