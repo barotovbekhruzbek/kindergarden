@@ -10,7 +10,10 @@
   >
 
       <el-form-item label="Loginni kiriting" prop="login">
-        <el-input v-model="user.login" @keypress.enter="regis(regForm)" />
+        <el-input v-model="user.login"
+                  @keypress.enter="regis(regForm)"
+                  @blur="loginCheck()"
+        />
       </el-form-item>
   
     <el-form-item label="Parolni kiriting" prop="password">
@@ -51,7 +54,9 @@ const rules = ref({
   ]
 })
 const authStore = useAuthStore()
-
+const loginCheck = async () => {
+   
+}
 const regis = async (regForm) => {
 
   if (!regForm) return
