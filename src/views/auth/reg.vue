@@ -55,7 +55,12 @@ const rules = ref({
 })
 const authStore = useAuthStore()
 const loginCheck = async () => {
-   let res = await authStore.checkLogin()
+   let res = await authStore.checkLogin({
+     login: user.value.login
+   })
+  if(res.status ===200) {
+    console.log(res.data)
+  }
 }
 const regis = async (regForm) => {
 

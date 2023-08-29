@@ -1,5 +1,5 @@
 import axios from "axios";
-import {defineStore } from "pinia"
+import {defineStore,storeToRefs } from "pinia"
 import { useHelperStore } from ".";
 import { useTokenStore } from "../user/token";
 import { ElMessage } from "element-plus";
@@ -11,11 +11,11 @@ export const useApiStore = defineStore('api',()=>{
         const {url} = helperStore
 
         const tokenStore = useTokenStore()
-        const {token,header} = tokenStore
+        const {token,header} = storeToRefs(tokenStore)
 
         const getAxios = (payload) => {
             return axios.get(`${url}/${payload.url}`,{
-             ...tokenStore.header
+             ...header
             }).catch(e => {
                 ElMessage({
                     type:'error',
